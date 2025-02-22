@@ -9,22 +9,32 @@ export async function registerAction(_, formData) {
     const email = formData.get("email");
     const password = formData.get("password");
 
-    const hashedPassword = await bcrypt.hash(password, 12);
+    // check validation (all field must be filled)
+    if (!username || !email || !password) {
+        return {
+            success: false,
+            message: "All field must be filled",
+        };
+    }
 
     // check collision (is user registered)
-    const existingUser = await prisma.user.findUnique({
+    const user = await prisma.user.findUnique({
         where: {
             email: email,
         },
     });
 
-    if (existingUser) {
+    if (user) {
         return {
             success: false,
-            message: "email already registered",
+            message: "Email already registered",
         };
     }
 
+    // hashing password
+    const hashedPassword = await bcrypt.hash(password, 12);
+
+    // create user in database
     await prisma.user.create({
         data: {
             username: username,
