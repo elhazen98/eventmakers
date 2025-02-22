@@ -1,16 +1,15 @@
 "use client";
 
 import { Button, Input } from "@heroui/react";
-import { registerAction } from "./action";
+import { loginAction } from "./action";
 import { useActionState } from "react";
 
 export default function Page() {
-    const [state, formAction, pending] = useActionState(registerAction, null);
+    const [state, formAction, pending] = useActionState(loginAction, null);
     return (
         <div className="space-y-4 font-bold">
-            <div>Register Account</div>
+            <div>Login</div>
             <form action={formAction} className="space-y-2">
-                <Input name="username" label="Username" required />
                 <Input name="email" type="email" label="Email" required />
                 <Input
                     name="password"
@@ -24,7 +23,7 @@ export default function Page() {
                     className="w-full"
                     isLoading={pending}
                 >
-                    Register
+                    Login
                 </Button>
             </form>
             {!state?.success && (
