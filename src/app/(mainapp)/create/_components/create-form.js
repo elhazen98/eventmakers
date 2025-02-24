@@ -38,7 +38,7 @@ export const CreateForm = ({ userId }) => {
             <DatePicker name="eventdate" label="Event Date"></DatePicker>
             <Input name="location" label="Event Location"></Input>
             <Input type="file" label="Poster / Flyer"></Input>
-            <Button type="submit" isLoading={pending}>
+            <Button type="submit" isLoading={pending} color="primary">
                 Add Event
             </Button>
         </form>

@@ -1,7 +1,6 @@
 "use server";
 
 import { prisma } from "@/utils/prisma";
-import { Nanum_Pen_Script } from "next/font/google";
 
 export async function createEventAction(_, formData) {
     const userId = formData.get("userId");
@@ -11,8 +10,6 @@ export async function createEventAction(_, formData) {
     const eventdate = new Date(formData.get("eventdate"));
     const location = formData.get("location");
     const image = formData.get("image");
-
-    console.log({ userId, name, description, categories, eventdate, location });
 
     // check validation (all field must be filled)
     if (!name || !description || !categories || !eventdate || !location) {
