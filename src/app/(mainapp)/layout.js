@@ -12,7 +12,9 @@ export default async function Layout({ children }) {
             className={`flex flex-col h-screen justify-between ${onest.className}`}
         >
             <div className="flex justify-between px-8 py-4">
-                <div className="font-bold">Eventmakers</div>
+                <Link className="font-bold text-neutral-900" href="/dashboard">
+                    Eventmakers
+                </Link>
                 {session ? (
                     <div className="flex space-x-2">
                         <div className="text-right">
