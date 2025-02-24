@@ -21,8 +21,12 @@ export const CreateForm = ({ userId }) => {
     return (
         <form className="space-y-4" action={formAction}>
             <input name="userId" defaultValue={userId} hidden></input>
-            <Input name="name" label="Event Name"></Input>
-            <Textarea name="description" label="Event Description"></Textarea>
+            <Input name="name" label="Event Name" required></Input>
+            <Textarea
+                name="description"
+                label="Event Description"
+                required
+            ></Textarea>
             <div className="flex w-full justify-between p-4 bg-neutral-100 rounded-xl text-sm">
                 <label htmlFor="categories" className=" text-neutral-500">
                     Event Categories
@@ -35,8 +39,12 @@ export const CreateForm = ({ userId }) => {
                     ))}
                 </select>
             </div>
-            <DatePicker name="eventdate" label="Event Date"></DatePicker>
-            <Input name="location" label="Event Location"></Input>
+            <DatePicker
+                name="eventdate"
+                label="Event Date"
+                required
+            ></DatePicker>
+            <Input name="location" label="Event Location" required></Input>
             <Input type="file" label="Poster / Flyer"></Input>
             <Button type="submit" isLoading={pending} color="primary">
                 Add Event
