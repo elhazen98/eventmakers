@@ -47,7 +47,7 @@ export async function loginAction(_, formData) {
         data: {
             userId: user.id,
             createdAt: new Date(),
-            expiredAt: new Date(Date.now() + 5 * 60 * 1000),
+            expiredAt: new Date(Date.now() + 2 * 60 * 60 * 1000),
         },
     });
 

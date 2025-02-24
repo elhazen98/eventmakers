@@ -1,5 +1,5 @@
 import { auth } from "@/libs/auth";
-import { Button, Link, select } from "@heroui/react";
+import { Button, Link } from "@heroui/react";
 import { Onest } from "next/font/google";
 import Avatar from "boring-avatars";
 
