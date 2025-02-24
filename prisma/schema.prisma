@@ -24,11 +24,10 @@ model event {
   eventName String
   eventDescription String
   eventDate DateTime
-  location String
+  eventCategory String
+  eventLocation String
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
-  isPublished Boolean
-  isDeleted Boolean
   imageUrl String?
   authorId String
   author user @relation(fields: [authorId], references: [id])

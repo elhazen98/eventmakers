@@ -6,6 +6,7 @@ import { useActionState } from "react";
 
 export default function Page() {
     const [state, formAction, pending] = useActionState(loginAction, null);
+
     return (
         <div className="space-y-4">
             <div className="text-xl text-center font-bold">Login</div>
